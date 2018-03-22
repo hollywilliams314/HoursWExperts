@@ -66,21 +66,13 @@ function nthRecursive(list, element) {
 
 var counter = 0;
 
-console.log("element = " + element);
-console.log("counter = " + counter);
   if (list == null) {
-    console.log("list == null returning undefined");
     return undefined;
   }
   else if (counter == element) {
-    console.log("list.value =  " + list.value);
-    console.log("element = " + element);
-    console.log("list.value == element returning list.value");
     return list.value;
   }
   else {
-    console.log("at last else - recursing");
-//    return nthRecursive(list.rest,element);
     return nthRecursive(list.rest,element-1);
 
   }

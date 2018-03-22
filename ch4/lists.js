@@ -80,7 +80,9 @@ console.log("counter = " + counter);
   }
   else {
     console.log("at last else - recursing");
-    return nthRecursive(list.rest,element);
+//    return nthRecursive(list.rest,element);
+    return nthRecursive(list.rest,element-1);
+
   }
 }
 

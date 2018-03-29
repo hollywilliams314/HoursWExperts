@@ -26,7 +26,7 @@ function loop(value, test, update, body)
       body(value);
     }
 // call update
-    loop(update(value));
+    loop(update(value),test,update,body);
 // run again on new value
  }
 

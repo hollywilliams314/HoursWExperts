@@ -24,7 +24,20 @@ function buildGraph(edges) {
   return graph;
 }
 
-const roadGraph = buildGraph(roads);
+const roadGraph = buildGraph(roads);console.log(roadGraph);
+
+// this is roadGraph
+// { 'Alice\'s House': [ 'Bob\'s House', 'Cabin', 'Post Office' ],
+//   'Bob\'s House': [ 'Alice\'s House', 'Town Hall' ],
+//   Cabin: [ 'Alice\'s House' ],
+//   'Post Office': [ 'Alice\'s House', 'Marketplace' ],
+//   'Town Hall': [ 'Bob\'s House', 'Daria\'s House', 'Marketplace', 'Shop' ],
+//   'Daria\'s House': [ 'Ernie\'s House', 'Town Hall' ],
+//   'Ernie\'s House': [ 'Daria\'s House', 'Grete\'s House' ],
+//   'Grete\'s House': [ 'Ernie\'s House', 'Farm', 'Shop' ],
+//   Farm: [ 'Grete\'s House', 'Marketplace' ],
+//   Shop: [ 'Grete\'s House', 'Marketplace', 'Town Hall' ],
+//   Marketplace: [ 'Farm', 'Post Office', 'Shop', 'Town Hall' ] }
 
 class VillageState {
   constructor(place, parcels) {
@@ -33,6 +46,7 @@ class VillageState {
   }
 
   move(destination) {
+    // if we can't get there from here
     if (!roadGraph[this.place].includes(destination)) {
       return this;
     } else {
@@ -49,6 +63,7 @@ let first = new VillageState(
   "Post Office",
   [{place: "Post Office", address: "Alice's House"}]
 );
+
 let next = first.move("Alice's House");
 
 console.log(next.place);

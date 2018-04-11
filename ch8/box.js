@@ -11,7 +11,7 @@
 //  lock at the start of the function and unlock and lock it only when it
 // started out locked.
 
-//"use strict";
+"use strict";
 const box = {
   locked: true,
   unlock() { this.locked = false; },
@@ -49,7 +49,7 @@ try {
 }
 
 console.log(box);
-console.log(box.content);
+//console.log(box.content);
 
 console.log(box.locked);    // book's test
 // → true

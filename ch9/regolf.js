@@ -31,7 +31,7 @@ verify(/\w{7,}/,
        ["no", "hotten totten tenten"]);
 
 // find A word without the letter e (or E)
-verify(/\b[^e+\b]/i,
+verify(/\b[^e]+\b/i,
        ["red platypus", "wobbling nest"],
        ["earth bed", "learning ape", "BEET"]);
 

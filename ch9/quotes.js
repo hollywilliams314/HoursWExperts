@@ -14,14 +14,12 @@
 // replacement string ($1, $2). Groups that are not matched will be replaced by nothing.
 
 let text = "'I'm the cook,' he said, 'it's my job.'";
-// 'I'm the cook,' he said, 'it's my job.'
+
 console.log(text);
 // if the ' is between 2 letters keep it
 // if the ' is at the beginnig of a word or the end of a word replace it
 //console.log(text.replace(/^\'|(\s\')|(\,\')|(\.\')/g, "\""));
 // console.log(text.replace(/(^\')/,"$1"));
-// console.log(text.replace(/^\'|\s\'|\,\'|\.\'/g, "\""));
 // → "I'm the cook," he said, "it's my job."
 console.log(text.replace(/(^|\W)'|'(\W|$)/g, '$1"$2'));
-//console.log(text.replace(/\'/g, "\""));
 // → "I'm the cook," he said, "it's my job."

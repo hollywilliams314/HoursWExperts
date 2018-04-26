@@ -6,10 +6,6 @@
   </head>
   <body>
 
-  <!-- To find the tag name of an element, use its nodeName property. 
-  But note that this will return the tag name in all uppercase. 
-  Use the toLowerCase or toUpperCase string methods to compensate for this. -->
-
   <h1>Heading with a <span>span</span> element.</h1>
   <p>A paragraph with <span>one</span>, <span>two</span>
   spans.</p>
@@ -21,8 +17,6 @@
 
 <script>
   function byTagName(node, tagName) {
-    // Your code here.
-    //console.log("hey!");
     let found = [];
     tagName = tagName.toUpperCase();
 
@@ -33,7 +27,6 @@
           if (child.nodeName == tagName) { 
             found.push(child);
           }
-          //console.log(child);
           look(child);
         }
 

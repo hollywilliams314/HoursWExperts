@@ -20,49 +20,42 @@
     {name: "Popocatepetl", height: 5465, place: "Mexico"},
     {name: "Mont Blanc", height: 4808, place: "Italy/France"}
   ];
-  console.table(MOUNTAINS);
+  //console.table(MOUNTAINS);
+
+  let headings = Object.keys(MOUNTAINS[0]);
+  headings = headings.map(h =>
+    h.charAt(0).toUpperCase() + h.slice(1)
+  );
+  
   // Your code here
   let table = document.createElement('table');
   let tr = document.createElement('tr');
-  let thN = document.createElement('th');
-  let thH = document.createElement('th');
-  let thP = document.createElement('th');
-  let tName = document.createTextNode('Name');
-  let tHeight = document.createTextNode('Height');
-  let tPlace = document.createTextNode('Place');
 
-  thN.appendChild(tName);
-  thH.appendChild(tHeight);
-  thP.appendChild(tPlace);
-
-  tr.appendChild(thN);
-  tr.appendChild(thH);
-  tr.appendChild(thP);
-
+  for (let heading of headings) {
+    // create text node with text
+    let txt = document.createTextNode(heading);
+    // create table header
+    let tHeader = document.createElement('th');
+    // attach text to header
+    tHeader.appendChild(txt);
+    // attach header to row
+    tr.appendChild(tHeader);
+  }
   table.appendChild(tr);
 
   for (let mountain of MOUNTAINS) {
 
     tr = document.createElement('tr');
+    let txt;
+    for (m of Object.values(mountain)) { 
+      txt = document.createTextNode(m);
+      let tData = document.createElement('td');
+      if (typeof(m) == "number") tData.style.textAlign = "right";
+      tData.appendChild(txt);
+      tr.appendChild(tData);
+    }
 
-    let tdName = document.createElement('td');
-    let tdHeight = document.createElement('td');
-    let tdPlace = document.createElement('td');
-
-    let name = document.createTextNode(mountain.name);
-    let height = document.createTextNode(mountain.height);
-    let place = document.createTextNode(mountain.place);
-
-    tdHeight.style.textAlign = "right";
-
-    tdName.appendChild(name);
-    tdHeight.appendChild(height);
-    tdPlace.appendChild(place);
-
-    tr.appendChild(tdName);
-    tr.appendChild(tdHeight);
-    tr.appendChild(tdPlace);
-
+//attach row to table
     table.appendChild(tr);
 }
 document.body.appendChild(table)

@@ -1,0 +1,73 @@
+<DOCTYPE html>
+<html lang="en"> 
+
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<h1>Mountains</h1>
+
+<div id="mountains"></div>
+
+<script>
+  const MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, place: "Tanzania"},
+    {name: "Everest", height: 8848, place: "Nepal"},
+    {name: "Mount Fuji", height: 3776, place: "Japan"},
+    {name: "Vaalserberg", height: 323, place: "Netherlands"},
+    {name: "Denali", height: 6168, place: "United States"},
+    {name: "Popocatepetl", height: 5465, place: "Mexico"},
+    {name: "Mont Blanc", height: 4808, place: "Italy/France"}
+  ];
+  console.table(MOUNTAINS);
+  // Your code here
+  let table = document.createElement('table');
+  let tr = document.createElement('tr');
+  let thN = document.createElement('th');
+  let thH = document.createElement('th');
+  let thP = document.createElement('th');
+  let tName = document.createTextNode('Name');
+  let tHeight = document.createTextNode('Height');
+  let tPlace = document.createTextNode('Place');
+
+  thN.appendChild(tName);
+  thH.appendChild(tHeight);
+  thP.appendChild(tPlace);
+
+  tr.appendChild(thN);
+  tr.appendChild(thH);
+  tr.appendChild(thP);
+
+  table.appendChild(tr);
+
+  for (let mountain of MOUNTAINS) {
+
+    tr = document.createElement('tr');
+
+    let tdName = document.createElement('td');
+    let tdHeight = document.createElement('td');
+    let tdPlace = document.createElement('td');
+
+    let name = document.createTextNode(mountain.name);
+    let height = document.createTextNode(mountain.height);
+    let place = document.createTextNode(mountain.place);
+
+    tdHeight.style.textAlign = "right";
+
+    tdName.appendChild(name);
+    tdHeight.appendChild(height);
+    tdPlace.appendChild(place);
+
+    tr.appendChild(tdName);
+    tr.appendChild(tdHeight);
+    tr.appendChild(tdPlace);
+
+    table.appendChild(tr);
+}
+document.body.appendChild(table)
+
+</script>
+</body>
+
+</html>

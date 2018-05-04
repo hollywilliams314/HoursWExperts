@@ -20,6 +20,8 @@
     {name: "Popocatepetl", height: 5465, place: "Mexico"},
     {name: "Mont Blanc", height: 4808, place: "Italy/France"}
   ];
+
+  
   //console.table(MOUNTAINS);
 
   let headings = Object.keys(MOUNTAINS[0]);
@@ -27,7 +29,6 @@
     h.charAt(0).toUpperCase() + h.slice(1)
   );
   
-  // Your code here
   let table = document.createElement('table');
   let tr = document.createElement('tr');
 
@@ -44,7 +45,6 @@
   table.appendChild(tr);
 
   for (let mountain of MOUNTAINS) {
-
     tr = document.createElement('tr');
     let txt;
     for (m of Object.values(mountain)) { 

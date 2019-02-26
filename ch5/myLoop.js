@@ -13,7 +13,7 @@
 
 function loop(value, test, update, body)
  {
-   console.log(`value = ${value}`)
+//   console.log(`value = ${value}`)
    console.log(typeof(test), `${test}`);
 
 // run test func on value, stop if it is false
